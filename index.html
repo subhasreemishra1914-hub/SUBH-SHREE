@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#173b2b"><title>SUBH SHREE Furniture & Home Decor</title>
+<style>
+:root{--green:#173b2b;--green2:#2f6248;--cream:#f7f4ed;--gold:#c6a56b;--ink:#222720;--muted:#6d746d;--line:#e4e0d6}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--cream);color:var(--ink)}
+header{background:var(--green);color:white;padding:18px max(18px,calc((100% - 1200px)/2));display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{font-size:1.22rem;font-weight:850;letter-spacing:.13em}.brand small{display:block;font-size:.68rem;font-weight:500;letter-spacing:.18em;color:#d8c49d;margin-top:4px}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap}nav a{color:#fff;text-decoration:none;font-size:.9rem}.navbtn,.btn{border:0;border-radius:999px;padding:11px 17px;background:var(--gold);color:#1d2b20;font-weight:750;cursor:pointer;text-decoration:none;display:inline-block}
+.hero{background:linear-gradient(120deg,rgba(13,40,28,.94),rgba(28,65,46,.82)),url('images/product-01.jpg') center/cover;color:white;padding:64px 20px}
+.hero-inner{max-width:1120px;margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.22em;color:#dfc58f;font-size:.76rem;font-weight:750}.hero h1{font-family:Georgia,serif;font-size:clamp(2.3rem,6vw,4.5rem);line-height:1.02;max-width:700px;margin:15px 0}.hero p{max-width:570px;color:#e6e9e3;line-height:1.7}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn-outline{border:1px solid #b7c6b9;color:white;background:transparent;border-radius:999px;padding:11px 17px;text-decoration:none;font-weight:700;cursor:pointer}
+.wrap{max-width:1200px;margin:auto;padding:34px 18px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}.section-head h2{font-family:Georgia,serif;font-size:2rem;margin:0}.section-head p{margin:6px 0 0;color:var(--muted)}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 22px}.toolbar input,.toolbar select{border:1px solid var(--line);background:white;border-radius:10px;padding:11px 12px;font:inherit;min-width:0}.toolbar input{flex:1;min-width:180px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.card{background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 4px 18px #24352a0a;display:flex;flex-direction:column}.photo{height:220px;background:#eeece5;display:flex;align-items:center;justify-content:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain;background:#fff}.card-body{padding:14px;display:flex;flex-direction:column;gap:9px;flex:1}.card-title{font-weight:750;font-size:.98rem}.price{font-weight:800;color:var(--green);font-size:1.05rem}.price.missing{color:#8a8e87;font-weight:600;font-size:.9rem}.card-actions{display:flex;gap:8px;margin-top:auto}.card-actions button{flex:1;padding:10px 8px;border-radius:9px;border:0;cursor:pointer;font-weight:750}.add{background:var(--green);color:white}.small{font-size:.78rem;color:var(--muted);line-height:1.45}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:32px 0}.feature{padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff}.feature strong{display:block;margin:9px 0}.feature p{color:var(--muted);font-size:.9rem;line-height:1.55;margin-bottom:0}.contact{background:#e9e5d9;border-radius:18px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.contact h2{font-family:Georgia,serif;margin:0 0 8px}.contact p{margin:0;color:#5b625a}.contact-form{display:flex;gap:8px;flex-wrap:wrap}.contact-form input{padding:11px;border:1px solid #d3cdbf;border-radius:9px;min-width:190px}footer{margin-top:34px;background:#112d20;color:#d8e0d8;padding:25px 18px;text-align:center;font-size:.85rem}.cart-count{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:20px;background:white;color:var(--green);font-size:.75rem;margin-left:4px}.notice{padding:12px 14px;background:#edf4ed;border:1px solid #cfe0cf;border-radius:10px;color:#23472f;margin:14px 0;display:none}.empty{grid-column:1/-1;padding:45px;text-align:center;color:var(--muted);background:#fff;border-radius:14px}
+@media(max-width:950px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.photo{height:200px}}
+@media(max-width:650px){header{padding:15px}.hero{padding:48px 18px}.wrap{padding:28px 14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.photo{height:155px}.card-body{padding:10px}.card-title{font-size:.9rem}.card-actions{flex-direction:column}.features{grid-template-columns:1fr}.section-head h2{font-size:1.7rem}.contact{padding:20px}.brand{font-size:1.08rem}}
+@media(max-width:370px){.grid{grid-template-columns:1fr}.photo{height:220px}}
+</style></head><body>
+<header><div class="brand">SUBH SHREE<small>FURNITURE • MATS • HOME DECOR</small></div><nav><a href="#catalog">Catalogue</a><a href="#about">About</a><a href="#contact">Contact</a><button class="navbtn" onclick="showCart()">Cart <span id="cartCount" class="cart-count">0</span></button></nav></header>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">Comfort • Quality • Everyday living</div><h1>Make your space feel like home.</h1><p>Explore the SUBH SHREE product catalogue. Browse the photos, add products to your cart, and contact us to confirm prices and availability.</p><div class="hero-actions"><a class="btn" href="#catalog">Explore catalogue</a><a class="btn-outline" href="#contact">Contact the shop</a></div></div></section>
+<main class="wrap"><section id="catalog"><div class="section-head"><div><h2>Our Catalogue</h2><p>Product photos are taken from your supplied catalogue PDF.</p></div></div><div class="small">Product labels are numbered until each item is verified. Names and prices are not guessed. Please confirm details with the shop before ordering.</div><div class="toolbar"><input id="search" type="search" placeholder="Search product name or number…" oninput="renderProducts()"><select id="sort" onchange="renderProducts()"><option value="default">Catalogue order</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div><div id="notice" class="notice"></div><div id="grid" class="grid"></div></section>
+<section id="about" class="features"><div class="feature"><div>✦</div><strong>Wide catalogue</strong><p>Browse the product photos provided for SUBH SHREE.</p></div><div class="feature"><div>⌂</div><strong>Easy product editing</strong><p>Update names and prices after checking each item.</p></div><div class="feature"><div>✓</div><strong>Order enquiry</strong><p>Prepare a cart and send an enquiry to confirm availability and final pricing.</p></div></section>
+<section id="contact" class="contact"><div><h2>Need help choosing?</h2><p>Enter the shop’s WhatsApp number to send your order enquiry.</p></div><div class="contact-form"><input id="shopPhone" inputmode="numeric" placeholder="WhatsApp number (with country code)"><button class="btn" onclick="savePhone()">Save number</button></div></section></main>
+<footer>© <span id="year"></span> SUBH SHREE • Furniture & Home Decor<br><span style="opacity:.7">Please confirm product names, prices and availability before ordering.</span></footer>
+<script>
+const baseProducts=[{id:1,image:'images/product-01.jpg',name:'Product 01',price:''},
+{id:2,image:'images/product-02.jpg',name:'Product 02',price:''},
+{id:3,image:'images/product-03.jpg',name:'Product 03',price:''},
+{id:4,image:'images/product-04.jpg',name:'Product 04',price:''},
+{id:5,image:'images/product-05.jpg',name:'Product 05',price:''},
+{id:6,image:'images/product-06.jpg',name:'Product 06',price:''},
+{id:7,image:'images/product-07.jpg',name:'Product 07',price:''},
+{id:8,image:'images/product-08.jpg',name:'Product 08',price:''},
+{id:9,image:'images/product-09.jpg',name:'Product 09',price:''},
+{id:10,image:'images/product-10.jpg',name:'Product 10',price:''},
+{id:11,image:'images/product-11.jpg',name:'Product 11',price:''},
+{id:12,image:'images/product-12.jpg',name:'Product 12',price:''},
+{id:13,image:'images/product-13.jpg',name:'Product 13',price:''},
+{id:14,image:'images/product-14.jpg',name:'Product 14',price:''},
+{id:15,image:'images/product-15.jpg',name:'Product 15',price:''},
+{id:16,image:'images/product-16.jpg',name:'Product 16',price:''},
+{id:17,image:'images/product-17.jpg',name:'Product 17',price:''},
+{id:18,image:'images/product-18.jpg',name:'Product 18',price:''},
+{id:19,image:'images/product-19.jpg',name:'Product 19',price:''},
+{id:20,image:'images/product-20.jpg',name:'Product 20',price:''},
+{id:21,image:'images/product-21.jpg',name:'Product 21',price:''},
+{id:22,image:'images/product-22.jpg',name:'Product 22',price:''},
+{id:23,image:'images/product-23.jpg',name:'Product 23',price:''},
+{id:24,image:'images/product-24.jpg',name:'Product 24',price:''},
+{id:25,image:'images/product-25.jpg',name:'Product 25',price:''},
+{id:26,image:'images/product-26.jpg',name:'Product 26',price:''},
+{id:27,image:'images/product-27.jpg',name:'Product 27',price:''},
+{id:28,image:'images/product-28.jpg',name:'Product 28',price:''},
+{id:29,image:'images/product-29.jpg',name:'Product 29',price:''},
+{id:30,image:'images/product-30.jpg',name:'Product 30',price:''},
+{id:31,image:'images/product-31.jpg',name:'Product 31',price:''},
+{id:32,image:'images/product-32.jpg',name:'Product 32',price:''},
+{id:33,image:'images/product-33.jpg',name:'Product 33',price:''},
+{id:34,image:'images/product-34.jpg',name:'Product 34',price:''},
+{id:35,image:'images/product-35.jpg',name:'Product 35',price:''},
+{id:36,image:'images/product-36.jpg',name:'Product 36',price:''},
+{id:37,image:'images/product-37.jpg',name:'Product 37',price:''},
+{id:38,image:'images/product-38.jpg',name:'Product 38',price:''},
+{id:39,image:'images/product-39.jpg',name:'Product 39',price:''},
+{id:40,image:'images/product-40.jpg',name:'Product 40',price:''},
+{id:41,image:'images/product-41.jpg',name:'Product 41',price:''},
+{id:42,image:'images/product-42.jpg',name:'Product 42',price:''},
+{id:43,image:'images/product-43.jpg',name:'Product 43',price:''},
+{id:44,image:'images/product-44.jpg',name:'Product 44',price:''},
+{id:45,image:'images/product-45.jpg',name:'Product 45',price:''},
+{id:46,image:'images/product-46.jpg',name:'Product 46',price:''},
+{id:47,image:'images/product-47.jpg',name:'Product 47',price:''},
+{id:48,image:'images/product-48.jpg',name:'Product 48',price:''},
+{id:49,image:'images/product-49.jpg',name:'Product 49',price:''},
+{id:50,image:'images/product-50.jpg',name:'Product 50',price:''},
+{id:51,image:'images/product-51.jpg',name:'Product 51',price:''},
+{id:52,image:'images/product-52.jpg',name:'Product 52',price:''},
+{id:53,image:'images/product-53.jpg',name:'Product 53',price:''},
+{id:54,image:'images/product-54.jpg',name:'Product 54',price:''},
+{id:55,image:'images/product-55.jpg',name:'Product 55',price:''},
+{id:56,image:'images/product-56.jpg',name:'Product 56',price:''},
+{id:57,image:'images/product-57.jpg',name:'Product 57',price:''},
+{id:58,image:'images/product-58.jpg',name:'Product 58',price:''},
+{id:59,image:'images/product-59.jpg',name:'Product 59',price:''},
+{id:60,image:'images/product-60.jpg',name:'Product 60',price:''},
+{id:61,image:'images/product-61.jpg',name:'Product 61',price:''},
+{id:62,image:'images/product-62.jpg',name:'Product 62',price:''},
+{id:63,image:'images/product-63.jpg',name:'Product 63',price:''},
+{id:64,image:'images/product-64.jpg',name:'Product 64',price:''},
+{id:65,image:'images/product-65.jpg',name:'Product 65',price:''},
+{id:66,image:'images/product-66.jpg',name:'Product 66',price:''},
+{id:67,image:'images/product-67.jpg',name:'Product 67',price:''},
+{id:68,image:'images/product-68.jpg',name:'Product 68',price:''},
+{id:69,image:'images/product-69.jpg',name:'Product 69',price:''},
+{id:70,image:'images/product-70.jpg',name:'Product 70',price:''},
+{id:71,image:'images/product-71.jpg',name:'Product 71',price:''},
+{id:72,image:'images/product-72.jpg',name:'Product 72',price:''},
+{id:73,image:'images/product-73.jpg',name:'Product 73',price:''},
+{id:74,image:'images/product-74.jpg',name:'Product 74',price:''},
+{id:75,image:'images/product-75.jpg',name:'Product 75',price:''},
+{id:76,image:'images/product-76.jpg',name:'Product 76',price:''},
+{id:77,image:'images/product-77.jpg',name:'Product 77',price:''},
+{id:78,image:'images/product-78.jpg',name:'Product 78',price:''},
+{id:79,image:'images/product-79.jpg',name:'Product 79',price:''},
+{id:80,image:'images/product-80.jpg',name:'Product 80',price:''},
+{id:81,image:'images/product-81.jpg',name:'Product 81',price:''},
+{id:82,image:'images/product-82.jpg',name:'Product 82',price:''},
+{id:83,image:'images/product-83.jpg',name:'Product 83',price:''},
+{id:84,image:'images/product-84.jpg',name:'Product 84',price:''}];
+const STORE_KEY='subhShreeProductsV1', CART_KEY='subhShreeCartV1', PHONE_KEY='subhShreePhoneV1';
+let products=loadProducts(), cart=JSON.parse(localStorage.getItem(CART_KEY)||'[]');
+function loadProducts(){try{let saved=JSON.parse(localStorage.getItem(STORE_KEY)||'null');return saved&&saved.length===baseProducts.length?saved:baseProducts.map(p=>({...p}));}catch(e){return baseProducts.map(p=>({...p}));}}
+function saveProducts(){localStorage.setItem(STORE_KEY,JSON.stringify(products));}
+function money(v){let n=Number(v);return v!==''&&Number.isFinite(n)&&n>=0?'₹'+n.toLocaleString('en-IN'):'Price to be confirmed';}
+function renderProducts(){let q=document.getElementById('search').value.toLowerCase().trim();let list=products.filter(p=>(p.name+' '+String(p.id)).toLowerCase().includes(q));let sort=document.getElementById('sort').value;if(sort==='low')list.sort((a,b)=>(Number(a.price)||Infinity)-(Number(b.price)||Infinity));if(sort==='high')list.sort((a,b)=>(Number(b.price)||-1)-(Number(a.price)||-1));let g=document.getElementById('grid');if(!list.length){g.innerHTML='<div class="empty">No matching products found.</div>';return;}g.innerHTML=list.map(p=>`<article class="card"><div class="photo"><img src="${p.image}" loading="lazy" alt="Catalogue item ${p.id}"></div><div class="card-body"><div class="card-title">${escapeHtml(p.name||('Product '+p.id))}</div><div class="price ${p.price===''?'missing':''}">${money(p.price)}</div><div class="card-actions"><button class="add" onclick="addCart(${p.id})">Add to cart</button></div></div></article>`).join('');}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}function escapeAttr(s){return escapeHtml(s||'');}
+function addCart(id){let p=products.find(x=>x.id===id);let found=cart.find(x=>x.id===id);if(found)found.qty++;else cart.push({id,qty:1});localStorage.setItem(CART_KEY,JSON.stringify(cart));updateCartCount();showNotice((p.name||'Product '+id)+' added to cart.');}
+function updateCartCount(){document.getElementById('cartCount').textContent=cart.reduce((s,x)=>s+x.qty,0);}
+function showNotice(msg){let n=document.getElementById('notice');n.textContent=msg;n.style.display='block';setTimeout(()=>n.style.display='none',2800);}
+function showCart(){if(!cart.length){alert('Your cart is empty. Add products from the catalogue first.');return;}let lines=cart.map(c=>{let p=products.find(x=>x.id===c.id);return `${p.name} × ${c.qty} — ${money(p.price)}`;});let message='Hello SUBH SHREE, I would like to enquire about:\n'+lines.join('\n')+'\nPlease confirm availability and final prices.';let phone=(localStorage.getItem(PHONE_KEY)||document.getElementById('shopPhone').value||'').replace(/\D/g,'');if(!phone){alert(message+'\n\nTo send this on WhatsApp, enter and save the shop WhatsApp number in the Contact section.');document.getElementById('contact').scrollIntoView({behavior:'smooth'});return;}window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(message),'_blank');}
+function savePhone(){let p=document.getElementById('shopPhone').value.replace(/\D/g,'');if(p.length<10){alert('Please enter the correct shop WhatsApp number, including country code.');return;}localStorage.setItem(PHONE_KEY,p);showNotice('WhatsApp number saved in this browser.');}
+document.getElementById('shopPhone').value=localStorage.getItem(PHONE_KEY)||'';document.getElementById('year').textContent=new Date().getFullYear();renderProducts();updateCartCount();
+</script></body></html>
